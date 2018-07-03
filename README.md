@@ -161,11 +161,13 @@ However, in your actual training, we recommend to create two different buckets f
 
 ```bash
 #! /bin/bash
-# create_dataset_bucket.sh
 
 echo CREATE BUCKET
 export STORAGE_BUCKET=gs://mnist_tfrecord
-gsutil mb -l us-central1 -p ordinal-virtue-208004 ${STORAGE_BUCKET}
+export YOUR_PRJ_NAME=ordinal-virtue-208004
+export YOUR_ZONE=us-central1-f
+
+gsutil mb -l ${YOUR_ZONE} -p ${YOUR_PRJ_NAME} ${STORAGE_BUCKET}
 
 echo COPY DATA TO BUCKET FROM /DATA DIR
 gsutil cp -r ./data ${STORAGE_BUCKET}

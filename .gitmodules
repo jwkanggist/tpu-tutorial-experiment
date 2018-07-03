@@ -1,0 +1,3 @@
+[submodule "tpu"]
+	path = tpu
+	url = https://github.com/tensorflow/tpu

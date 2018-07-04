@@ -28,7 +28,7 @@ You need to install gcloud SDK directly from [the link](https://cloud.google.com
 ```bash
 $ gcloud config list
 [compute]
-region = us-east1
+region = us-central1
 zone = us-central1-f
 [core]
 account = jwkang10@gmail.com

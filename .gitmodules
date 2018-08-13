@@ -1,3 +1,0 @@
-[submodule "tpu"]
-	path = tpu
-	url = https://github.com/jwkanggist/tpu

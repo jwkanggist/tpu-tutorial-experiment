@@ -27,6 +27,7 @@ echo ${OS}
 export DATA_DIR=gs://imagenet_tfrecords
 export STORAGE_BUCKET=gs://tpu_test_results
 
+rm -rf /tmp/gcs_filesystem*
 python ./tpu/models/official/mobilenet/mobilenet.py \
       --use_tpu=True\
 	  --tpu=$USER-tpu \

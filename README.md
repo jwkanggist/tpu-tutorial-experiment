@@ -9,7 +9,7 @@ Regeneration of Google's tpu-resnet tutorial
 ## About
 Easy GCP TPU training in Jeju Google Deep Learning Camp 2018
 
-## Documentation (KOR)
+#### Documentation (KOR, gslide links)
 - [Jaewook Kang, "어머! TPU! 이건 꼭 써야해!", Aug. 2018](https://docs.google.com/presentation/d/1LqlZc8IjXzp255UIXWQRBRGvvqwnLzkz1qAoq5YD1hs/edit#slide=id.p1)
 
 #### Dependencies

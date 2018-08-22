@@ -1,6 +1,6 @@
-# tpu-resnet-tutorial
-Regeneration of Google's tpu-resnet tutorial
-- @ Jeju Google Deep Learning Camp 2018
+# tpu-tutorial-experiments
+Cloud TPU tutorial and ImageNet TPU benchmark
+- Since Jeju Google Deep Learning Camp 2018
 - Special thanks to Sourabh and Yu-han @ Google
 
 
@@ -9,9 +9,20 @@ Regeneration of Google's tpu-resnet tutorial
 ## About
 Easy GCP TPU training in Jeju Google Deep Learning Camp 2018
 
+#### Documentation (KOR, gslide links)
+- [Jaewook Kang, "어머! TPU! 이건 꼭 써야해!", Aug. 2018](https://docs.google.com/presentation/d/1LqlZc8IjXzp255UIXWQRBRGvvqwnLzkz1qAoq5YD1hs/edit#slide=id.p1)
+
 #### Dependencies
 - macOS and command line interface only
 - Tensorflow >= 1.8
+
+
+## ImageNet Benchmarks
+
+| Models                                            |  Top1 Acc (paper)  |  TPU Trained Acc  | TPU Training time   | Execution  |
+| ------------------                                | :---------------:  | :-----------: | :-----------------: | :----------:
+| [Mobilenet v1](https://arxiv.org/abs/1704.04861)  |  70.60%            |  71.27%       |  1d 23h 57m         | [run_mobilenet_main.sh](https://github.com/jwkanggist/tpu-tutorial-experiment/blob/master/run_mobilenet_main.sh)
+| [Resnet-50](https://arxiv.org/abs/1512.03385)     |  79.26%            |  76.19%       |  24h                | [run_resnet_main.sh](https://github.com/jwkanggist/tpu-tutorial-experiment/blob/master/run_resnet_main.sh)
 
 
 
@@ -197,13 +208,36 @@ cd ..
 Only remaining is to run `resnet_main.py` with 
 
 ```bash
-#! /bin/bash
-# run_python_resnet_main.sh
-
+echo =============================================
 echo RUN RESNET TRAINING  BY TPU
-export DATA_DIR=./data
+echo JAEWOOK KANG JEJU GOOGLE CAMP 2018
+echo =============================================
 
+echo "       _                 _         "
+echo " _   _| |__  _   _ _ __ | |_ _   _ "
+echo "| | | | '_ \| | | | '_ \| __| | | |"
+echo "| |_| | |_) | |_| | | | | |_| |_| |"
+echo " \__,_|_.__/ \__,_|_| |_|\__|\__,_|"
+
+
+
+echo "  .------------------------."
+echo "  |  Hi ! Google Camp 2018 |"
+echo "  '------------------------'"
+echo "      ^      (\_/)"
+echo "      '----- (O.o)"
+echo "             (> <)"
+OS="$(uname -s)"
+OS_X="Darwin"
+
+echo ${OS}
+
+export DATA_DIR=gs://imagenet_tfrecords
+export STORAGE_BUCKET=gs://tpu_test_results
+
+rm -rf /tmp/gcs_filesystem*
 python ./tpu/models/official/resnet/resnet_main.py \
+      --use_tpu=True\
 	  --tpu=$USER-tpu \
 	  --data_dir=$DATA_DIR\
 	  --model_dir=${STORAGE_BUCKET}/resnet

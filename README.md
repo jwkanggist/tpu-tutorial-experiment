@@ -22,7 +22,7 @@ Easy GCP TPU training in Jeju Google Deep Learning Camp 2018
 | Models                                            |  Top1 Acc (paper)  |  TPU Trained Acc  | TPU Training time   | Execution  |
 | ------------------                                | :---------------:  | :-----------: | :-----------------: | :----------:
 | [Mobilenet v1](https://arxiv.org/abs/1704.04861)  |  70.60%            |  71.27%       |  1d 23h 57m         | [run_mobilenet_main.sh](https://github.com/jwkanggist/tpu-tutorial-experiment/blob/master/run_mobilenet_main.sh)
-| [Resnet-50](https://arxiv.org/abs/1512.03385)     |  79.26%            |  76.19%       |  24h                | [run_resnet_main.sh](https://github.com/jwkanggist/tpu-tutorial-experiment/blob/master/run_resnet_main.sh)
+| [Resnet-50](https://arxiv.org/abs/1512.03385)     |  79.26%            |  76.19%       |  12h                | [run_resnet_main.sh](https://github.com/jwkanggist/tpu-tutorial-experiment/blob/master/run_resnet_main.sh)
 
 
 
